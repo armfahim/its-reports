@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>invoice-tracker</name>
+  <driver>net.sourceforge.jtds.jdbc.Driver</driver>
+  <username>apnaagora</username>
+  <password>apnaagora</password>
+  <url>jdbc:jtds:sqlserver://invoice-tracker.cd0oqia0qqw6.us-east-1.rds.amazonaws.com/invoice-tracker</url>
+  <database/>
+  <savePassword>true</savePassword>
+  <serverAddress/>
+</jdbcDataAdapter>

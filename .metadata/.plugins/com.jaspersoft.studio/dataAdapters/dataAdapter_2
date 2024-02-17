@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><jrsDataAdapter class="com.jaspersoft.jasperreports.data.jrs.JrsDataAdapterImpl">
+  <name>Jaspersoft Server Data Adapter</name>
+  <useSSO>false</useSSO>
+</jrsDataAdapter>

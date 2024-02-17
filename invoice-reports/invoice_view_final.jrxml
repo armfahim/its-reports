@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 9.0.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice_view_final" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="92e25f5a-f83b-4b80-b70c-e743cfee8004">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="invoice-tracker"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Dataset_1" uuid="5412e517-e70f-46f7-8ab1-6c9c98efb83b">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="invoice-tracker"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<queryString>
+			<![CDATA[SELECT * FROM invoice_details id 
+JOIN supplier_details sd ON id.supplier_id  = sd.id
+WHERE id.id = 49]]>
+		</queryString>
+		<field name="id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+		</field>
+		<field name="created_at" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		</field>
+		<field name="record_status" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="record_status"/>
+			<property name="com.jaspersoft.studio.field.label" value="record_status"/>
+		</field>
+		<field name="updated_at" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		</field>
+		<field name="cheque_number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="cheque_number"/>
+			<property name="com.jaspersoft.studio.field.label" value="cheque_number"/>
+		</field>
+		<field name="credit_amount" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="credit_amount"/>
+			<property name="com.jaspersoft.studio.field.label" value="credit_amount"/>
+		</field>
+		<field name="invoice_amount" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_amount"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_amount"/>
+		</field>
+		<field name="invoice_date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_date"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_date"/>
+		</field>
+		<field name="invoice_desc" class="java.sql.Clob">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_desc"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_desc"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="invoice_details"/>
+		</field>
+		<field name="invoice_number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_number"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_number"/>
+		</field>
+		<field name="is_paid" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="is_paid"/>
+			<property name="com.jaspersoft.studio.field.label" value="is_paid"/>
+		</field>
+		<field name="net_due" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="net_due"/>
+			<property name="com.jaspersoft.studio.field.label" value="net_due"/>
+		</field>
+		<field name="paid_date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="paid_date"/>
+			<property name="com.jaspersoft.studio.field.label" value="paid_date"/>
+		</field>
+		<field name="payment_due_date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="payment_due_date"/>
+			<property name="com.jaspersoft.studio.field.label" value="payment_due_date"/>
+		</field>
+		<field name="term" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="term"/>
+			<property name="com.jaspersoft.studio.field.label" value="term"/>
+		</field>
+		<field name="created_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+		</field>
+		<field name="updated_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+		</field>
+		<field name="supplier_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="supplier_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="supplier_id"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="address"/>
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+		</field>
+		<field name="contact_person" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="contact_person"/>
+			<property name="com.jaspersoft.studio.field.label" value="contact_person"/>
+		</field>
+		<field name="email" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="email"/>
+			<property name="com.jaspersoft.studio.field.label" value="email"/>
+		</field>
+		<field name="phone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="phone"/>
+			<property name="com.jaspersoft.studio.field.label" value="phone"/>
+		</field>
+		<field name="supplier_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="supplier_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="supplier_name"/>
+		</field>
+	</subDataset>
+	<subDataset name="CopyOfDataset_1" uuid="bc6da3c9-6ff8-49e7-b834-c9641f0bd380">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="invoice-tracker"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<queryString>
+			<![CDATA[SELECT * FROM invoice_details id 
+JOIN supplier_details sd ON id.supplier_id  = sd.id
+WHERE id.id = 49]]>
+		</queryString>
+		<field name="id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+		</field>
+		<field name="created_at" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		</field>
+		<field name="record_status" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="record_status"/>
+			<property name="com.jaspersoft.studio.field.label" value="record_status"/>
+		</field>
+		<field name="updated_at" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		</field>
+		<field name="cheque_number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="cheque_number"/>
+			<property name="com.jaspersoft.studio.field.label" value="cheque_number"/>
+		</field>
+		<field name="credit_amount" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="credit_amount"/>
+			<property name="com.jaspersoft.studio.field.label" value="credit_amount"/>
+		</field>
+		<field name="invoice_amount" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_amount"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_amount"/>
+		</field>
+		<field name="invoice_date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_date"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_date"/>
+		</field>
+		<field name="invoice_desc" class="java.sql.Clob">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_desc"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_desc"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="invoice_details"/>
+		</field>
+		<field name="invoice_number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_number"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_number"/>
+		</field>
+		<field name="is_paid" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="is_paid"/>
+			<property name="com.jaspersoft.studio.field.label" value="is_paid"/>
+		</field>
+		<field name="net_due" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="net_due"/>
+			<property name="com.jaspersoft.studio.field.label" value="net_due"/>
+		</field>
+		<field name="paid_date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="paid_date"/>
+			<property name="com.jaspersoft.studio.field.label" value="paid_date"/>
+		</field>
+		<field name="payment_due_date" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="payment_due_date"/>
+			<property name="com.jaspersoft.studio.field.label" value="payment_due_date"/>
+		</field>
+		<field name="term" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="term"/>
+			<property name="com.jaspersoft.studio.field.label" value="term"/>
+		</field>
+		<field name="created_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+		</field>
+		<field name="updated_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+		</field>
+		<field name="supplier_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="supplier_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="supplier_id"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="address"/>
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+		</field>
+		<field name="contact_person" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="contact_person"/>
+			<property name="com.jaspersoft.studio.field.label" value="contact_person"/>
+		</field>
+		<field name="email" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="email"/>
+			<property name="com.jaspersoft.studio.field.label" value="email"/>
+		</field>
+		<field name="phone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="phone"/>
+			<property name="com.jaspersoft.studio.field.label" value="phone"/>
+		</field>
+		<field name="supplier_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="supplier_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="supplier_name"/>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT * FROM invoice_details id 
+JOIN supplier_details sd ON id.supplier_id  = sd.id
+WHERE id.id = 49]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+	</field>
+	<field name="created_at" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+	</field>
+	<field name="record_status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="record_status"/>
+		<property name="com.jaspersoft.studio.field.label" value="record_status"/>
+	</field>
+	<field name="updated_at" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+	</field>
+	<field name="cheque_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cheque_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="cheque_number"/>
+	</field>
+	<field name="credit_amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="credit_amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="credit_amount"/>
+	</field>
+	<field name="invoice_amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="invoice_amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="invoice_amount"/>
+	</field>
+	<field name="invoice_date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="invoice_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="invoice_date"/>
+	</field>
+	<field name="invoice_desc" class="java.sql.Clob">
+		<property name="com.jaspersoft.studio.field.name" value="invoice_desc"/>
+		<property name="com.jaspersoft.studio.field.label" value="invoice_desc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="invoice_details"/>
+	</field>
+	<field name="invoice_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="invoice_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="invoice_number"/>
+	</field>
+	<field name="is_paid" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="is_paid"/>
+		<property name="com.jaspersoft.studio.field.label" value="is_paid"/>
+	</field>
+	<field name="net_due" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="net_due"/>
+		<property name="com.jaspersoft.studio.field.label" value="net_due"/>
+	</field>
+	<field name="paid_date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="paid_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="paid_date"/>
+	</field>
+	<field name="payment_due_date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="payment_due_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="payment_due_date"/>
+	</field>
+	<field name="term" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="term"/>
+		<property name="com.jaspersoft.studio.field.label" value="term"/>
+	</field>
+	<field name="created_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+	</field>
+	<field name="updated_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+	</field>
+	<field name="supplier_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="supplier_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="supplier_id"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+	</field>
+	<field name="contact_person" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="contact_person"/>
+		<property name="com.jaspersoft.studio.field.label" value="contact_person"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="phone"/>
+		<property name="com.jaspersoft.studio.field.label" value="phone"/>
+	</field>
+	<field name="supplier_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="supplier_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="supplier_name"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<image>
+				<reportElement x="-11" y="-12" width="90" height="90" uuid="14aaee31-bf98-477a-b96e-043bd5ac6f80">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["apnaagora.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="-11" y="85" width="121" height="42" uuid="f68f42e6-15be-4245-85ff-f6f64b704d39"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Apna Agora
+Tallahassee, Florida]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="463" y="-8" width="100" height="30" forecolor="#747EED" uuid="c22386ab-b3a1-4da3-874b-5d829ce2cbd0"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["#" + $F{invoice_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="477" y="14" width="85" height="30" forecolor="#C93936" backcolor="rgba(74, 228, 69, 0.0)" uuid="bc301f81-5ded-4272-aa9f-1cf7bb814948"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{is_paid} ? "PAID" : "UNPAID"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="140" splitType="Stretch">
+			<staticText>
+				<reportElement x="-6" y="13" width="100" height="22" forecolor="#BD918F" backcolor="#E69D9C" uuid="b297a0f8-d107-442c-b87d-fef127350b25"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Invoice from:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="RelativeToBandHeight" x="-6" y="35" width="286" height="20" uuid="a228a93d-5028-4691-90c2-8626f91544ad"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_name}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="-6" y="56" width="286" height="20" uuid="969776b4-e400-460c-a015-f69c89c677ec"/>
+				<textFieldExpression><![CDATA[$F{contact_person}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="-6" y="77" width="286" height="20" uuid="65472e2a-3df7-4a13-a314-0a08e236dd18"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-6" y="106" width="286" height="21" uuid="5d359817-84e8-4aa2-ba18-25f0e131f8c8"/>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-6" y="122" width="286" height="18" uuid="4743d1ef-c7a3-4cc6-afb8-8cc36407234b"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="381" y="13" width="100" height="22" forecolor="#BD918F" backcolor="#E69D9C" uuid="6b935bf7-0a85-4c30-8a32-8954fc9d001a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Payment Details:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="35" width="100" height="14" uuid="340cdc99-de37-4702-bdf7-59ea2943b014"/>
+				<text><![CDATA[Total Due:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="52" width="100" height="14" uuid="05037a1a-550c-46b8-b642-7f092f0091e5"/>
+				<text><![CDATA[Payment Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="70" width="100" height="14" uuid="2091b130-a49c-4a52-b484-8817857a1d48"/>
+				<text><![CDATA[Paid date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="90" width="100" height="14" uuid="e29d3389-c12f-463e-9bf8-db78834f38c5"/>
+				<text><![CDATA[Cheque Number:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="467" y="91" width="100" height="26" uuid="6020eae3-ecdb-44d9-8193-f3602fcf7c89"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[org.apache.commons.lang3.StringUtils.defaultIfBlank($F{cheque_number}, "N/A")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="70" width="82" height="16" uuid="c24498b1-3748-4a52-8bc3-65a6e8fc132b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{paid_date} == null ? "N/A" : $F{paid_date}.toString().replace("-", "/").replaceAll("(\\d{4})/(\\d{2})/(\\d{2})", "$2-$3-$1")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="53" width="81" height="18" forecolor="#C93936" uuid="ca92a3da-a203-4a79-b97c-44c9db841a52"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{is_paid} ? "PAID" : "UNPAID"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" isPrintRepeatedValues="false" x="485" y="35" width="82" height="21" forecolor="#9247DE" uuid="f716b9a3-2c69-4b9f-885f-c9fe46e0cab7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{net_due})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement x="-9" y="62" width="561" height="60" uuid="2f39428b-048d-4fd1-9cb7-c0ab3da824d9">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset_1" uuid="edce66d8-7f68-4460-a66b-d2c1a50ac8d3">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="c1d48dc4-5285-4b18-9c68-2ad4812202bd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="190" height="30" uuid="7483b165-ba14-477b-8da7-d9d28af8220b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Invoice Date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="190" height="30" uuid="c36f3e4a-15a8-4ebc-952d-41e46f2eeeb3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{invoice_date} == null ? "N/A" : $F{invoice_date}.toString().replace("-", "/").replaceAll("(\\d{4})/(\\d{2})/(\\d{2})", "$2-$3-$1")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="200" uuid="53ae2abf-54fb-44e9-bf9d-8d1350ac5073">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="200" height="30" uuid="4abe6253-c71e-415c-8211-09b49abd49ee"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Terms]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="200" height="30" uuid="72f2666e-b903-4712-9a05-33b47dd7f5bb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{term}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="187" uuid="4bac9088-953a-489f-9974-8d721bb91724">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="187" height="30" uuid="7fb6658b-47f4-4505-8f49-34549a738eb6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Due Date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="187" height="30" uuid="4a72b780-ae13-41cb-a8b2-837324fa101c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{payment_due_date} == null ? "N/A" : $F{payment_due_date}.toString().replace("-", "/").replaceAll("(\\d{4})/(\\d{2})/(\\d{2})", "$2-$3-$1")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="173" splitType="Stretch">
+			<line>
+				<reportElement x="313" y="5" width="253" height="1" forecolor="#ACE6E8" uuid="823c0ff5-540c-4829-943e-7b0db01aa54c"/>
+			</line>
+			<staticText>
+				<reportElement x="313" y="14" width="100" height="21" uuid="0f0af872-d918-4603-a084-75789461d0bd"/>
+				<text><![CDATA[Invoice Amount:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="313" y="35" width="253" height="1" forecolor="#ACE6E8" uuid="9cc98ca0-6499-4fd9-bc89-6a48303763a7"/>
+			</line>
+			<staticText>
+				<reportElement x="313" y="41" width="100" height="21" uuid="e27722a6-1f9c-4509-9175-9dc78c2720a6"/>
+				<text><![CDATA[Credit Amount:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="314" y="62" width="253" height="1" forecolor="#ACE6E8" uuid="48bdcf0f-065a-44d3-b2b8-d7623eec5763"/>
+			</line>
+			<staticText>
+				<reportElement x="315" y="67" width="100" height="21" uuid="2d7fc624-5327-4aaa-881c-cfd56c21ef8c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Due:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="460" y="68" width="100" height="20" forecolor="#9247DE" uuid="3ed3cd20-9ab0-4ee0-a8af-ecef9a963b61"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{net_due})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="41" width="100" height="21" forecolor="#9247DE" uuid="0bdcd75b-8b93-48a6-966f-dd18b339aa81"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{credit_amount})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="16" width="100" height="17" forecolor="#9247DE" uuid="019a5e62-2a47-4184-94f1-09bb67fd6a0d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{invoice_amount})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

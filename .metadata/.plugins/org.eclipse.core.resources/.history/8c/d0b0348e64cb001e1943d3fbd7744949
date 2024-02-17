@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 9.0.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice_view" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="090a72f3-3b49-4d26-9d41-c9e8b19973e7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="0" width="50" height="50" uuid="90d9ff76-3182-4726-98b1-9fced0c12b6d"/>
+				<imageExpression><![CDATA[""]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="17" y="65" width="53" height="15" uuid="6060088d-5bf6-4e6e-ac2e-e9a9ad03fe54"/>
+				<textFieldExpression><![CDATA[Apna Agora]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="16" y="85" width="94" height="15" uuid="a90eea16-a5fb-425c-8284-d27479d0625a"/>
+				<textFieldExpression><![CDATA[Tallahasse, Florida]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="431" y="9" width="100" height="30" uuid="e7fe98a6-25bf-466e-a847-4893c24db221"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
