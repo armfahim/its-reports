@@ -20,4 +20,16 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>net.sf.jasperreports.nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>LandPurchaseSummary.jasper</name>
+			<type>1</type>
+			<location>D:/lms/src/main/resources/reports/LandPurchaseSummary.jasper</location>
+		</link>
+		<link>
+			<name>LandPurchaseSummary.jrxml</name>
+			<type>1</type>
+			<location>D:/lms/src/main/resources/reports/LandPurchaseSummary.jrxml</location>
+		</link>
+	</linkedResources>
 </projectDescription>
