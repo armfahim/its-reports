@@ -338,7 +338,7 @@ WHERE id.id = $P{INVOICE_ID}]]>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["apnaagora.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{LOGO_PATH} + "apnaagora.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="2" y="85" width="121" height="42" uuid="a4e6d727-ff85-4c28-b248-8502f2b26457"/>
@@ -366,71 +366,7 @@ Tallahassee, Florida]]></text>
 		<band height="66" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="344" splitType="Stretch">
-			<componentElement>
-				<reportElement x="35" y="188" width="509" height="62" uuid="e593c4a7-0291-4f86-85c9-a8a00117da78">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
-					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
-					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
-				</reportElement>
-				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="Dataset1" uuid="71076af3-a5ff-4286-8e50-281501d48a8c">
-						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					</datasetRun>
-					<jr:column width="190" uuid="ea525068-b587-4a49-9e19-7bb4fdd49121">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
-						<jr:columnHeader style="Table 1_CH" height="30">
-							<staticText>
-								<reportElement x="0" y="0" width="190" height="30" uuid="d037848a-c27b-4a8c-83ac-fdcb2cac9125"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[Invoice Date]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table 1_TD" height="30">
-							<textField>
-								<reportElement x="0" y="0" width="190" height="30" uuid="f6afef99-15c2-4291-a1ec-e21e6b4c2ec6"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{invoice_date}.toString().replace("-", "/").replaceAll("(\\d{4})/(\\d{2})/(\\d{2})", "$2-$3-$1")]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="170" uuid="2d9f12b3-7d56-483c-968e-6978a2da30c1">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
-						<jr:columnHeader style="Table 1_CH" height="30">
-							<staticText>
-								<reportElement x="0" y="0" width="170" height="30" uuid="5c5c4bfb-0501-48f1-823e-72b52122666a"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[Terms]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table 1_TD" height="30">
-							<textField>
-								<reportElement x="0" y="0" width="170" height="30" uuid="9dedb666-986a-44ff-945f-32ef15a95b2b"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{term}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="149" uuid="7d79bc1a-675a-4ddb-b572-0e9cd3c7d049">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
-						<jr:columnHeader style="Table 1_CH" height="30">
-							<staticText>
-								<reportElement x="0" y="0" width="149" height="30" uuid="fec703fb-5667-4701-91eb-06092e72decd"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[Due Date]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table 1_TD" height="30">
-							<textField>
-								<reportElement x="0" y="0" width="149" height="30" uuid="450d5b0b-1560-4cc0-9df2-27f0ac6e1fcc"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{payment_due_date}.toString().replace("-", "/").replaceAll("(\\d{4})/(\\d{2})/(\\d{2})", "$2-$3-$1")]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-				</jr:table>
-			</componentElement>
+		<band height="349" splitType="Stretch">
 			<staticText>
 				<reportElement x="6" y="8" width="100" height="22" forecolor="#BD918F" backcolor="#E69D9C" uuid="f4535214-bd54-467c-b789-db1348cf468d"/>
 				<textElement>
@@ -517,43 +453,116 @@ Tallahassee, Florida]]></text>
 				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{net_due})]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="310" y="262" width="258" height="1" forecolor="#ACE6E8" uuid="da1fd129-0fb7-4691-b1db-c39a4db5f866"/>
+				<reportElement x="310" y="251" width="243" height="1" forecolor="#ACE6E8" uuid="da1fd129-0fb7-4691-b1db-c39a4db5f866">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 			</line>
 			<staticText>
 				<reportElement x="310" y="265" width="100" height="21" uuid="d827afdc-04de-493a-aef3-9964bc3b4737"/>
 				<text><![CDATA[Invoice Amount:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="310" y="294" width="100" height="21" uuid="151ea985-f031-437d-8851-d2d1070a3452"/>
+				<reportElement x="310" y="295" width="100" height="21" uuid="151ea985-f031-437d-8851-d2d1070a3452"/>
 				<text><![CDATA[Credit Amount:]]></text>
 			</staticText>
-			<line>
-				<reportElement x="311" y="318" width="257" height="1" forecolor="#ACE6E8" uuid="a7454670-5342-4592-9c6b-9d714cf94289"/>
-			</line>
 			<staticText>
-				<reportElement x="310" y="321" width="100" height="21" uuid="e2d89314-d268-4a4b-b6e7-7244783cb5b3"/>
+				<reportElement x="310" y="324" width="100" height="21" uuid="e2d89314-d268-4a4b-b6e7-7244783cb5b3"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Net Due:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="457" y="269" width="100" height="17" forecolor="#9247DE" uuid="f2c90f7c-8e55-4370-91e0-14fb8eba775d"/>
+				<reportElement x="457" y="265" width="97" height="21" forecolor="#9247DE" uuid="f2c90f7c-8e55-4370-91e0-14fb8eba775d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{invoice_amount})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="457" y="294" width="100" height="21" forecolor="#9247DE" uuid="690fd135-e5c8-479a-94b3-4b7d2f075d41"/>
+				<reportElement x="457" y="295" width="97" height="21" forecolor="#9247DE" uuid="690fd135-e5c8-479a-94b3-4b7d2f075d41"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{credit_amount})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="457" y="322" width="100" height="20" forecolor="#9247DE" uuid="5425a8b4-7f67-4eaf-8cd8-f2f65ceeefdf"/>
+				<reportElement x="457" y="324" width="97" height="21" forecolor="#9247DE" uuid="5425a8b4-7f67-4eaf-8cd8-f2f65ceeefdf">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["$"+new java.text.DecimalFormat("#,##0.00").format($F{net_due})]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="6" y="190" width="203" height="20" uuid="a2abe5ac-150d-44d5-969f-fafc578872d1"/>
+				<box>
+					<pen lineWidth="0.25" lineColor="#F6F6F6"/>
+					<topPen lineWidth="1.25" lineStyle="Solid" lineColor="#F7BDBC"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#F7BDBC"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Invoice Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="190" width="174" height="20" uuid="7148c838-6ece-4a3e-9e72-069b58364cc4"/>
+				<box>
+					<pen lineWidth="0.5" lineColor="#F7BDBC"/>
+					<topPen lineWidth="1.25" lineStyle="Solid" lineColor="#F7BDBC"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#F7BDBC"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Terms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="190" width="170" height="20" uuid="2fb6c85d-68b3-49ff-8693-9b8e0bb092e2"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#F7BDBC"/>
+					<topPen lineWidth="1.25" lineStyle="Solid" lineColor="#F7BDBC"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#F7BDBC"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Due Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="6" y="210" width="203" height="20" backcolor="#F6F6F6" uuid="c644d26d-f05a-4dc4-afa5-a0faafb75118">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="209" y="210" width="174" height="20" backcolor="#F6F6F6" uuid="1ab9f1ce-4ac4-49c0-9695-d58c7ba9b981">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="383" y="210" width="170" height="20" backcolor="#F6F6F6" uuid="8e001773-3a9c-4220-8f36-1c35465dff50">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{invoice_date}]]></textFieldExpression>
+			</textField>
 			<line>
-				<reportElement x="310" y="288" width="258" height="3" forecolor="#ACE6E8" uuid="459d1fdf-b453-482b-8ebe-ebc851313394"/>
+				<reportElement x="310" y="289" width="243" height="1" forecolor="#ACE6E8" uuid="d8f5ee87-e72d-4b82-ae2e-043f0ab8b7a9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="310" y="319" width="243" height="1" forecolor="#ACE6E8" uuid="422cc5c7-1b8a-464e-b58d-bf0e95fa909b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 			</line>
 		</band>
 	</columnHeader>
@@ -567,7 +576,7 @@ Tallahassee, Florida]]></text>
 				<text><![CDATA[Description]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="3" y="26" width="100" height="30" forecolor="#56B6BF" uuid="9af3cb2a-1f92-406c-a3ec-712e5bc78981"/>
+				<reportElement x="3" y="26" width="553" height="30" forecolor="#56B6BF" uuid="9af3cb2a-1f92-406c-a3ec-712e5bc78981"/>
 				<textFieldExpression><![CDATA[$F{invoice_desc}  == null ? "No data to display"  : $F{invoice_desc}]]></textFieldExpression>
 			</textField>
 		</band>
